@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+￼<html>
+<head>
+    <title>
+        Django Logins | {% block title %}{% endblock %}
+    </title>
+    <link rel="stylesheet" href="/site_media/style.css" type="text/css" />
+</head>
+    <body>
+		<div id="wrapper">
+        <div id="doc">
+        <div class="menu">
+            {% if user.is_authenticated %}
+			<div class="option">
+            <a href="/">Home</a>
+			</div><!option>
+			<div class="option">
+            <a href="/save/">Submit</a>
+			</div><!option>
+			<div class="option">
+            <a href="/user/{{ user.username }}/">
+                Accounts</a><!{{ user.username }}>
+			</div><!option>
+			<div class="option">
+            <a href="/logout/">Logout</a>
+			</div><!option>
+            {% else %}
+			<div class="option">
+            <a href="/">Home</a>
+			</div><!option>
+			<div class="option">
+            <a href="/login/">Login</a>
+			</div><!option>
+			<div class="option">
+            <a href="/register/">Register</a>
+			</div><!option>
+            {% endif %}
+        </div>
+		<div class="main">
+			<div class="login">
+		<h3>{% block head %}{% endblock %}</h3>
+        {% block content %}{% endblock %}
+        </div> <!wrapper>
+        </div> <!main>
+		</div> <!login>
+		</div> <!doc>
+    </body>
+</html>

@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Welcome to Django Logins{% endblock %}
+{% block head %}
+{% if user.username %}
+<h2>Please use the menu to store your Web logins!</h2>
+{% else %}
+<h2>Welcome anonymous user!
+You need to <a href="/login/">login</a>
+before you can store your Web logins!</h2>
+<h2>This application was developed by Dimitrios Litsios for his diploma thesis</h2>
+<h2>Η εφαρμογή αυτή υλοποιήθηκε από το Λίτσιο Δημήτρη για την πτυχιακή του εργασία</h2>
+{% endif %}
+
+{% endblock %}
+{% block content %}
+{% endblock %}

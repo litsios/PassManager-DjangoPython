@@ -1,0 +1,24 @@
+{%if logins %}
+    {% for login in logins%}
+	<div class=logindetails>
+	<div class=logindetailsleft>
+    <div class="info"><a href="{{ login.loginUrl }}">
+        {{ login.name }}</a>   </div></br>
+    <div class="info">Username:</div><div class="infodetail"> {{ login.login_username }}</div></br>
+    <div class="infopass">Password:</div><div class="infodetailpass"> {{ login.password }}</div></br>
+    <div class="info">Notes:</div><div class="infodetail"> {{ login.notes }}</div></br>
+	<div class="edit"><img src="/site_media/images/edit.png" alt="edit login" height="12px"><a href="/edit/?id={{ login.id|urlencode }}"
+        class="edit"> Edit</a></img></div>
+    <div class="edit"><img src="/site_media/images/delete.png" alt="edit login" height="12px"><a href="/delete/?id={{ login.id|urlencode }}"
+        class="delete">Delete</a></img></li></span>
+		</div>
+		</div>
+		<div class=logindetailsright>
+		<a href="/edit/?id={{ login.id|urlencode }}">	<img src="/site_media/images/rightarrow.png" ></img></a>
+		</div>
+		</div>
+    {% endfor %}
+
+{% else %}
+<h2>No Logins found.</h2>
+{% endif %}

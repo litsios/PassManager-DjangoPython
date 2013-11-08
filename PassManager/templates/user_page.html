@@ -1,0 +1,6 @@
+{% extends "base.html" %}
+{% block title %}{{ username }}{% endblock %}
+{% block head %}<h2>Logins for {{ username }}</h2>{% endblock %}
+{% block content %}
+{% include "login_list.html" %}
+{% endblock %} 

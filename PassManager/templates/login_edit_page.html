@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block title %}Edit Login{% endblock %}
+{% block head %}<h2>Edit Login</h2>{% endblock %}
+{% block content %}
+<script language="JavaScript" type="text/javascript">
+							 			function submitform(form1) {
+											if (form1.id_name.value == "") {
+												alert("Please Choose Site Name")				
+												form1.id_name.focus();				
+												return false;				
+											}
+											if (form1.id_url.value == "") {
+												alert("Please Choose Site Url")				
+												form1.id_url.focus();				
+												return false;				
+											}
+											if (form1.id_Login_username.value == "") {
+												alert("Please Choose Username")				
+												form1.id_Login_username.focus();				
+												return false;				
+											}
+											if (form1.id_password.value == "") {
+												alert("Please choose password")				
+												form1.id_password.focus();				
+												return false;				
+											}
+											if (form1.id_notes.value == "") {
+												alert("Please complete notes")				
+												form1.id_notes.focus();				
+												return false;				
+											}
+											
+										}
+</script>
+<div class=logineditsubmit>
+<form method="post" action="." EncType="Multipart/Form-Data" onSubmit="javascript:return submitform(this)">{% csrf_token %}
+<table>
+ 		{{ form.as_table }}
+</table>
+    <div class="formbutton"><input type="submit" value="save" /></div>
+</form>
+</div>
+{% endblock %}

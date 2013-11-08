@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}Save Login{% endblock %}
+{% block head %}<h2>Save Login</h2>{% endblock %}
+{% block content %}
+<div class=logineditsubmit>
+<form method="post" action=".">{% csrf_token %}
+    <table>
+	{{ form.as_table }}
+	</table>
+    <div class="formbutton"><input type="submit" value="save" /></div>
+</form>
+</div>
+{% endblock %}
